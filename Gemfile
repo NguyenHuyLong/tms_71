@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "bcrypt", "3.1.11"
 gem "rails", "~> 5.0.1"
 gem "bootstrap-sass", "3.3.6"
 gem "sqlite3"
@@ -28,3 +29,4 @@ group :development do
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "carrierwave", "~> 0.9"
