@@ -22,4 +22,5 @@ class User < ApplicationRecord
   def downcase_email
     self.email.downcase!
   end
+  has_secure_password
 end

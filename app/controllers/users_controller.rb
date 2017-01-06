@@ -1,4 +1,15 @@
 class UsersController < ApplicationController
+  def index
+  end
+
+  def show
+    @user = User.find_by id: params[:id]
+    if @user.nil?
+      flash[:danger] = t "flash.find"
+      redirect_to root_path
+    end
+  end
+
   def new
     @user = User.new
   end
@@ -14,6 +25,7 @@ class UsersController < ApplicationController
    
   private
   def user_params
-    params.require(:user).permit :name, :email, :password, :password_confirmation
+    params.require(:user).permit :name, :email, :password,
+    :password_confirmation
   end
 end
