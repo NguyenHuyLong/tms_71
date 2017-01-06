@@ -1,0 +1,13 @@
+<% provide :title, t("allSubjects") %>
+<h1><%= t "allSubjects" %></h1>
+
+<div class="col-xs-12 addButton">
+  <%= link_to t("addSubject"), new_subject_path,
+    class: "btn btn-primary" %>
+</div>
+
+<div class="col-xs-12">
+  <ul class="subjects"><%= render @subjects %></ul>
+</div>
+
+

@@ -13,6 +13,20 @@ en:
     design, development applications such as mobile phone software, games,
     social and website applications."
   copyright: "Copyright 2017 Framgia, Inc. All rights reserved."
+  createSubject: "Create subject successful!"
+  deletedSubject: "Subject deleted"
+  existedSubject: "Subject didn't existed"
+  subject: "Subject"
+  newSubject: "New Subject"
+  editSubject: "Edit Subject"
+  deleteSubject: "Delete Subject"
+  bottonCreateSubject: "Create new subject"
+  bottonUpdateSubject: "Update subject"
+  allSubjects: "All Subjects"
+  addSubject: "+ Add subject"
+  removeTask: "Remove task"
+  task: "Tasks: "
+  addTask: "Add task"
 
   layouts:
     header:

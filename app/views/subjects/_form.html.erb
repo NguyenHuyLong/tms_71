@@ -1,0 +1,36 @@
+<%= form_for @subject do |f| %>
+  <%= render "shared/error_messages", object: @subject %>
+
+  <div class="col-md-4">
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+    <div>
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    </div>
+  </div>
+
+  <div class="col-md-2">
+  </div>
+
+  <div class="col-md-5">
+    <h3><span class="label label-success">
+      <%= t "task" %><%= @subject.tasks.count %>
+    </span></h3>
+
+    <div id="tasks">
+      <%= f.fields_for :tasks do |task| %>
+        <%= render "task_fields", f: task %>
+      <% end %>
+    </div><br>
+    <div class="center">
+      <%= link_to_add_association t("addTask"), f, :tasks,
+        class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
