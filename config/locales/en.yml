@@ -1,8 +1,12 @@
 en:
+  the_user_inserted: The user %{username} has been inserted.
   title_page: "Framgia Training System"
+  save: Save
+  error: error
   error_translation: "translation not available"
   home: "Home"
   help: "Help"
+  signup: "Sign up"
   about: "About Framgia Viet Nam"
   framgia: "FramgiaVietNam"
   address: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road,
