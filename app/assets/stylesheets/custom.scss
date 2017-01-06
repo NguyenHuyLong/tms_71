@@ -131,8 +131,14 @@ footer {
 /* sidebar */
 
 aside {
-  section.user_info {
+  section.user_info, section.subject_info {
     margin-top: 20px;
+
+    h1 {
+      color: blue;
+      font-weight: bold !important;
+      font-size: 200% !important;
+    }
   }
   section {
     padding: 10px 0;
@@ -247,7 +253,7 @@ input {
 
 /* Users index */
 
-.users {
+.users, .subjects {
   list-style: none;
   margin: 0;
   li {
@@ -304,11 +310,6 @@ span.picture {
   }
 }
 
-.logo-small {
-  color: #f4511e;
-  font-size: 20px;
-}
-
 .navbar {
   min-height: 38px;
   background-color: #3b5998;
@@ -328,4 +329,28 @@ span.picture {
   line-height: 35px;
   margin-right: 3px;
   margin-bottom: 5px;
+}
+
+.addButton {
+  margin-left: 3em;
+}
+
+.center {
+  float: center
+}
+
+.subject {
+  color: green
+}
+
+.break {
+  word-wrap: break-word;
+}
+
+.subjects {
+  list-style: none;
+  margin: 0;
+  li {
+    border-bottom: 2px solid #ff9980;
+  }
 }

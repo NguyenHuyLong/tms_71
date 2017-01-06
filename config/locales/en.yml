@@ -7,16 +7,7 @@ en:
   home: "Home"
   help: "Help"
   signup: "Sign up"
-  about: "About Framgia Viet Nam"
-  framgia: "FramgiaVietNam"
-  address: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road,
-    Nam Tu Liem, Ha Noi, Viet Nam"
-  phone: "84-4-3795-5417"
-  mail: "hr_team@framgia.com"
-  description: "Framgia Vietnam is a company 100% Japan funded specializing in
-    design, development applications such as mobile phone software, games,
-    social and website applications."
-  copyright: "Copyright 2017 Framgia, Inc. All rights reserved."
+  confirm: "You sure?"
 
   layouts:
     header:
@@ -32,6 +23,16 @@ en:
       home: "Home |"
       about: "About |"
       help: "Help"
+      framgia: "FramgiaVietNam"
+      copyright: "Copyright 2017 Framgia, Inc. All rights reserved."
+      address: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road,
+        Nam Tu Liem, Ha Noi, Viet Nam"
+      phone: "84-4-3795-5417"
+      mail: "hr_team@framgia.com"
+      about: "About Framgia Viet Nam"
+      description: "Framgia Vietnam is a company 100% Japan funded specializing in
+        design, development applications such as mobile phone software, games,
+        social and website applications."
 
   static_pages:
     home:
@@ -44,7 +45,35 @@ en:
   profile: "Profile"
   setting: "Settings"
   acount: "Acount"
-  
+
   flash:
     login: "Invalid email/password combination"
     find: "User not found"
+    existed_subject: "Subject didn't existed"
+    success:
+      create_subject: "Create subject successful!"
+    delete:
+      delete_subject: "Subject deleted"
+
+  supervisors:
+    subjects:
+      form:
+        task: "Tasks: "
+        add_task: "Add task"
+      subject:
+        edit_subject: "Edit Subject"
+        delete_subject: "Delete Subject"
+      task_fields:
+        remove_task: "Remove task"
+      edit:
+        edit_subject: "Edit Subject"
+        botton_update_subject: "Update subject"
+      index:
+        all_subjects: "All Subjects"
+        add_subject: "+ Add subject"
+      new:
+        new_subject: "New Subject"
+        botton_create_subject: "Create new subject"
+      show:
+        task: "Tasks: "
+        subject: "Subject"
