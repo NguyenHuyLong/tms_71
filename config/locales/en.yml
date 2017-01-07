@@ -38,3 +38,13 @@ en:
       welcome: "WELCOME TO"
       system: "Framgia Training System"
       signup: "Sign Up Now!"
+
+  login: "Login"
+  logout: "Log out"
+  profile: "Profile"
+  setting: "Settings"
+  acount: "Acount"
+  
+  flash:
+    login: "Invalid email/password combination"
+    find: "User not found"
