@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   
   namespace :supervisors do
     resources :subjects
+    resources :users
   end
 end

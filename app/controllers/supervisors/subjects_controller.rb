@@ -1,8 +1,10 @@
 class Supervisors::SubjectsController < ApplicationController
+  before_action :logged_in_user, :verify_supervisor
   before_action :find_subject, except: [:index, :new, :create]
 
   def index
-    @subjects = Subject.order(created_at: :desc).paginate page: params[:page]
+    @subjects = Subject.order(created_at: :desc).
+      paginate page: params[:page], per_page: Settings.per_page
   end
 
   def show

@@ -8,7 +8,7 @@ en:
   help: "Help"
   signup: "Sign up"
   confirm: "You sure?"
-  
+
   layouts:
     header:
       title: "Framgia Training System"
@@ -56,6 +56,9 @@ en:
       create_subject: "Create subject successful!"
     delete:
       delete_subject: "Subject deleted"
+    danger:
+      not_supervisor: "You are not supervisor"
+      not_login: "Please login"
 
   supervisors:
     subjects:
@@ -79,7 +82,16 @@ en:
       show:
         task: "Tasks: "
         subject: "Subject"
-    
+    users:
+      form:
+        confirmation: "Confirmation"
+      index:
+        all_trainee: "All Trainee"
+        add_trainee: "+ Add Trainee"
+      new:
+        new_trainee: "New Trainee"
+        create_new_trainee: "Create new trainee"
+
   user:
     name: "Name"
     description: "Description"
