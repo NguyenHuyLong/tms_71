@@ -32,6 +32,11 @@ textarea {
   }
 }
 
+.course {
+  text-align: center;
+  margin-left: 1px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -253,7 +258,7 @@ input {
 
 /* Users index */
 
-.users, .subjects {
+.users, .courses, .subjects {
   list-style: none;
   margin: 0;
   li {
