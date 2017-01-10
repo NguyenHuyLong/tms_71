@@ -1,0 +1,22 @@
+<% provide :title, t("user.list_of_courses") %>
+<h1><%= t "user.list_of_courses" %></h1>
+<table class = "table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th><%= t "user.name" %></th>
+      <th><%= t "user.description" %></th>
+      <th><%= t "user.start_date" %></th>
+      <th><%= t "user.end_date" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.description %></td>
+        <td><%= course.start_date %></td>
+        <td><%= course.end_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

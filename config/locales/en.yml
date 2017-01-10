@@ -1,14 +1,14 @@
 en:
   the_user_inserted: The user %{username} has been inserted.
   title_page: "Framgia Training System"
-  save: Save
-  error: error
+  save: "Save"
+  error: "error"
   error_translation: "translation not available"
   home: "Home"
   help: "Help"
   signup: "Sign up"
   confirm: "You sure?"
-
+  
   layouts:
     header:
       title: "Framgia Training System"
@@ -49,6 +49,8 @@ en:
   flash:
     login: "Invalid email/password combination"
     find: "User not found"
+    profile_updated: "Profile updated"
+    user_not_exist: "Users didn't existed"
     existed_subject: "Subject didn't existed"
     success:
       create_subject: "Create subject successful!"
@@ -77,3 +79,15 @@ en:
       show:
         task: "Tasks: "
         subject: "Subject"
+    
+  user:
+    name: "Name"
+    description: "Description"
+    start_date: "Start date"
+    end_date: "End date"
+    avatar: "Avatar"
+    signup: "Sign up"
+    my_profile: "Your profile"
+    edit_profile: "Edit Profile Detail"
+    list_of_courses: "List of courses"
+    please_login: "Please log in."

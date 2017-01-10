@@ -1,9 +1,10 @@
-<% provide :title, @user.name %>
-<div class="row">
-  <aside class="col-md-4">
-  <section class="user_info">
-    <h1>
-      <%= @user.name %>
-    </h1>
-  </section>
+<% provide :title, t("user.my_profile") %>
+<h1><%= t "user.my_profile" %></h1>
+<div class="col-md-6 col-md-offset-3">
+  <p class="col-md-6 col-md-offset-3">
+    <%= label_tag :name %><%= @user.name %></br>
+    <%= label_tag :email %><%= @user.email %></br>
+    <%= label_tag :avatar %></br>
+    <img src="<%= @user.avatar.url %>" class="img-circle" alt="Cinque Terre" width="150" height="150"><br />
+  </p>
 </div>
