@@ -60,8 +60,14 @@ en:
     danger:
       not_supervisor: "You are not supervisor"
       not_login: "Please login"
+      course_not_found: "Course didn't existed"
 
   supervisors:
+    courses:
+      show:
+        button_start: "Start course"
+        button_finish: "Finish course"
+        button_pending: "Pending course"
     subjects:
       form:
         task: "Tasks: "
