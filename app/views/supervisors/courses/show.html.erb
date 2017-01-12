@@ -1,0 +1,21 @@
+<div>
+  <h1 class="label-name"><%= @course.name %></h1>
+  <p><%= @course.description %></p>
+  <p><%= @course.status %></p>
+  <%= form_for [:supervisors, @course] do |f| %>
+    <% case @course.status %>
+    <% when "pending" %>
+      <%= f.hidden_field :status, value: :started %>
+      <%= f.button t(".button_start"), type: :submit,
+        data: {confirm: t("confirm")}, class: "btn btn-success" %>
+    <% when "started" %>
+      <%= f.hidden_field :status, value: :finished %>
+      <%= f.button t(".button_finish"), type: :submit,
+        data: {confirm: t("confirm")}, class: "btn btn-danger" %>
+    <% when "finished" %>
+      <%= f.hidden_field :status, value: :pending %>
+      <%= f.button t(".button_pending"), type: :submit,
+        data: {confirm: t("confirm")}, class: "btn btn-warning" %>
+    <% end %>
+  <% end %>
+</div>
