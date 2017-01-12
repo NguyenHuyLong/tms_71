@@ -56,6 +56,7 @@ en:
       create_subject: "Create subject successful!"
     delete:
       delete_subject: "Subject deleted"
+      delete_user: "Trainee deleted"
     danger:
       not_supervisor: "You are not supervisor"
       not_login: "Please login"
@@ -88,9 +89,16 @@ en:
       index:
         all_trainee: "All Trainee"
         add_trainee: "+ Add Trainee"
+        edit_trainee: "Edit trainee"
+        delete_trainee: "Delete trainee"
       new:
         new_trainee: "New Trainee"
         create_new_trainee: "Create new trainee"
+        edit_trainee: "Edit trainee"
+        update_trainee: "Update trainee"
+      edit:
+        edit_trainee: "Edit Trainee"
+        button_update_trainee: "Update trainee"
 
   user:
     name: "Name"
