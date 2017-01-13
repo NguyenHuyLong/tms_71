@@ -1,0 +1,16 @@
+<%= provide :title, t(".supervisors.all_courses") %>
+<h1><%= t "supervisor.all_courses" %></h1>
+<div class="course">
+  <div class="col-xs-3 listButton">
+    <%= link_to t("supervisors.course.add"), new_supervisors_course_path,
+      class: "btn btn-primary" %>	
+  </div>
+</div><br>
+
+<div>
+  <%= will_paginate %>
+  <ul class="courses">
+    <%= render @courses %>
+  </ul>
+  <%= will_paginate %>
+</div>

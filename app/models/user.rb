@@ -18,6 +18,9 @@ class User < ApplicationRecord
     uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: 6}, allow_blank: true
   has_secure_password
+
+  scope :supervisor, -> {where supervisor: true}
+  scope :trainee, -> {where supervisor: false}
   
   private
   def downcase_email

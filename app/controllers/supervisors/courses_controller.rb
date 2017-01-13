@@ -1,7 +1,28 @@
 class Supervisors::CoursesController < ApplicationController
-  before_action :logged_in_user, only: [:show, :update]
-  before_action :verify_supervisor, only: [:show, :update]
+  before_action :logged_in_user, except: [:edit, :destroy]
+  before_action :verify_supervisor, except: [:edit, :destroy]
   before_action :find_course, only: [:show, :update]
+
+  def index
+    @courses = Course.order(created_at: :desc).
+      paginate page: params[:page], per_page: Settings.per_page
+  end
+  
+  def new
+    @course = Course.new
+    @supports = Supports::CourseSupport.new
+  end
+
+  def create
+    @course = Course.new course_params
+    if @course.save
+      flash[:info] = t "flash.success.create_course"
+      redirect_to supervisors_courses_path
+    else
+      @supports = Supports::CourseSupport.new
+      render :new
+    end
+  end
 
   def show
   end

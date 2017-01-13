@@ -6,7 +6,7 @@
         <li><%= link_to t(".home"), root_path, id: "head" %></li>
         <% if logged_in? %>
           <% if current_user.supervisor? %>
-            <li><%= link_to t(".course"), nil, id: "head" %></li>
+            <li><%= link_to t(".course"), supervisors_courses_path, id: "head" %></li>
             <li><%= link_to t(".subject"), supervisors_subjects_path,
               id: "head" %></li>
             <li><%= link_to t(".trainee"), supervisors_users_path,
