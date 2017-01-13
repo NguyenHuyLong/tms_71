@@ -1,21 +1,70 @@
+<% provide :title, t("supervisors.course.name") %>
+<div class="col-md-12">
+  <div class="col-md-6 col-md-offset-3"><h1 class="label-name"><%= @course.name %></h1></div>
+  <div class="btn-delete">
+    <%= link_to t("supervisors.course.delete"), supervisors_course_path(@course),
+      method: :delete, data: {confirm: t("confirm")},
+      class: "btn btn-danger" %>
+  </div>
+</div> 
+
 <div>
-  <h1 class="label-name"><%= @course.name %></h1>
-  <p><%= @course.description %></p>
-  <p><%= @course.status %></p>
-  <%= form_for [:supervisors, @course] do |f| %>
-    <% case @course.status %>
-    <% when "pending" %>
-      <%= f.hidden_field :status, value: :started %>
-      <%= f.button t(".button_start"), type: :submit,
-        data: {confirm: t("confirm")}, class: "btn btn-success" %>
-    <% when "started" %>
-      <%= f.hidden_field :status, value: :finished %>
-      <%= f.button t(".button_finish"), type: :submit,
-        data: {confirm: t("confirm")}, class: "btn btn-danger" %>
-    <% when "finished" %>
-      <%= f.hidden_field :status, value: :pending %>
-      <%= f.button t(".button_pending"), type: :submit,
-        data: {confirm: t("confirm")}, class: "btn btn-warning" %>
+  <div class="col-md-6 description">
+    <h3>
+      <%= t"supervisors.course.description" %>
+      <%= @course.description %>
+    </h3>
+  </div>
+  
+  <div class="col-md-offset-7">
+    <h4>
+      <%= t"supervisors.course.status" %>
+      <%= @course.status %>
+    </h4>
+    <%= form_for [:supervisors, @course] do |f| %>
+      <% case @course.status %>
+      <% when Settings.pending %>
+        <%= f.hidden_field :status, value: :started %>
+        <%= f.button t(".button_start"), type: :submit,
+          data: {confirm: t("confirm")}, class: "btn btn-success" %>
+      <% when Settings.started %>
+        <%= f.hidden_field :status, value: :finished %>
+        <%= f.button t(".button_finish"), type: :submit,
+          data: {confirm: t("confirm")}, class: "btn btn-danger" %>
+      <% when Settings.finished %>
+        <%= f.hidden_field :status, value: :pending %>
+        <%= f.button t(".button_pending"), type: :submit,
+          data: {confirm: t("confirm")}, class: "btn btn-warning" %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+</div>
+
+<div class="col-md-12 course-name">
+  <div class="col-md-4">
+    <h4><%= t "supervisors.course.subject" %></h4>
+    <ul>
+      <% @supports.subject_of_course.each do |a| %>
+        <li><%= a.name %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+    <h4><%= t "supervisors.course.trainee" %></h4>
+    <ul>
+      <% @supports.trainee_of_course.each do |a| %>
+        <li><%= a.name %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-md-4">
+    <h4><%= t "supervisors.course.supervisor" %></h4>
+    <ul>
+      <% @supports.supervisor_of_course.each do |a| %>
+        <li><%= a.name %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

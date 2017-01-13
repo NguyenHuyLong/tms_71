@@ -1,7 +1,8 @@
 class Supervisors::CoursesController < ApplicationController
   before_action :logged_in_user, except: [:edit, :destroy]
-  before_action :verify_supervisor, except: [:edit, :destroy]
-  before_action :find_course, only: [:show, :update]
+  before_action :verify_supervisor
+  before_action :find_course, except: [:new, :create, :index]
+  before_action :load_supports, except: [:index, :destroy]
 
   def index
     @courses = Course.order(created_at: :desc).
@@ -10,7 +11,6 @@ class Supervisors::CoursesController < ApplicationController
   
   def new
     @course = Course.new
-    @supports = Supports::CourseSupport.new
   end
 
   def create
@@ -19,12 +19,14 @@ class Supervisors::CoursesController < ApplicationController
       flash[:info] = t "flash.success.create_course"
       redirect_to supervisors_courses_path
     else
-      @supports = Supports::CourseSupport.new
       render :new
     end
   end
 
   def show
+  end
+
+  def edit
   end
 
   def update
@@ -33,6 +35,12 @@ class Supervisors::CoursesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @course.destroy
+    flash[:success] = t"flash.delete.delete_course"
+    redirect_to supervisors_courses_path
   end
 
   private
@@ -47,5 +55,9 @@ class Supervisors::CoursesController < ApplicationController
       flash[:danger] = t "flash.danger.course_not_found"
       redirect_to supervisors_courses_path
     end
+  end
+
+  def load_supports
+    @supports = Supports::CourseSupport.new course: @course
   end
 end
