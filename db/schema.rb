@@ -36,9 +36,9 @@ ActiveRecord::Schema.define(version: 20170104075433) do
     t.string   "description"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.integer  "status"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "status",      default: 0
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "subjects", force: :cascade do |t|

@@ -63,6 +63,7 @@ en:
     delete:
       delete_subject: "Subject deleted"
       delete_user: "Trainee deleted"
+      delete_course: "Course deleted"
     danger:
       not_supervisor: "You are not supervisor"
       not_login: "Please login"
@@ -84,6 +85,12 @@ en:
       edit: "Edit"
       delete: "Delete"
       add: "+ Add Course"
+      edit_course: "Edit Course"
+      subject: "Subject of Course"
+      trainee: "Trainee of Course"
+      supervisor: "Supervisor of Course"
+      description: "Description: "
+      status: "Status: "
 
     subjects:
       form:

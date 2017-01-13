@@ -1,5 +1,5 @@
-<% provide :title, t("supervisors.course.name") %>
-<h1><%= t "supervisors.course.create" %></h1>
+<% provide :title, t("supervisors.course.edit") %>
+<h1><%= t "supervisors.course.edit_course" %></h1>
 <div class="col-md-12">
   <%= form_for [:supervisors, @course] do |f| %>
     <div class="col-md-6">
@@ -17,9 +17,9 @@
       <%= f.label :end_date %>
       <%= f.date_field :end_date, class: "form-control" %>
 
-      <%= f.submit t("supervisors.course.create"), class: "btn btn-primary" %>
+      <%= f.submit t("supervisors.course.edit_course"), class: "btn btn-primary" %>
     </div>
-    
+      
     <div class="col-md-5 col-md-offset-1">
       <h4><span class="label label-success"><%= t ".add_subject" %></span></h4>
       <%= f.collection_check_boxes :subject_ids, @supports.subjects, :id, :name do |b| %>
