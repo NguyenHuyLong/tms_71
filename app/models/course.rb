@@ -2,8 +2,8 @@ class Course < ApplicationRecord
   has_many :course_subjects, inverse_of: :course
   has_many :subjects, through: :course_subjects
   has_many :user_courses, inverse_of: :course
-  has_many :user, through: :user_courses
-  
+  has_many :users, through: :user_courses
+
   enum status: {pending: 0, started: 1, finished: 2}
 
   validates :name, presence: true

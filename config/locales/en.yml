@@ -9,6 +9,7 @@ en:
   signup: "Sign up"
   confirm: "You sure?"
   close: "Add"
+  email: "Email: "
 
   layouts:
     header:
@@ -46,7 +47,7 @@ en:
   profile: "Profile"
   setting: "Settings"
   acount: "Acount"
-  
+
   date:
     start: "Start Date"
     end: "End Date"
@@ -56,6 +57,7 @@ en:
     find: "User not found"
     profile_updated: "Profile updated"
     user_not_exist: "Users didn't existed"
+    course_not_exist: "Course didn't existed"
     existed_subject: "Subject didn't existed"
     success:
       create_subject: "Create subject successful!"
@@ -67,6 +69,7 @@ en:
       not_supervisor: "You are not supervisor"
       not_login: "Please login"
       course_not_found: "Course didn't existed"
+      cannot_view_course: "You don't have permission to access this course"
 
   supervisors:
     courses:
@@ -135,3 +138,4 @@ en:
     edit_profile: "Edit Profile Detail"
     list_of_courses: "List of courses"
     please_login: "Please log in."
+    no_course: "You don't have any course"
