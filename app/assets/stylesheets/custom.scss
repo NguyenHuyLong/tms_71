@@ -258,7 +258,7 @@ input {
 
 /* Users index */
 
-.users, .courses, .subjects {
+.users, .courses, .subjects, .tasks {
   list-style: none;
   margin: 0;
   li {
@@ -352,7 +352,7 @@ span.picture {
   word-wrap: break-word;
 }
 
-.subjects {
+.subjects, .tasks {
   list-style: none;
   margin: 0;
   li {
