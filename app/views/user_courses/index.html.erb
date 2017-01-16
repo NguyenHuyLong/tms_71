@@ -1,0 +1,12 @@
+<h1><%= t "user.all_courses" %></h1>
+
+<div class="col-md-6 col-md-offset-3">
+  <ul class="courses">
+    <% @user_courses.each do |user_course| %>
+      <li>
+        <h3><%= link_to user_course.course.name, user_course %></h3><br>
+        <%= user_course.course.description %>
+      </li>
+    <% end %>
+  </ul>
+</div>
