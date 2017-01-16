@@ -70,6 +70,7 @@ en:
       not_login: "Please login"
       course_not_found: "Course didn't existed"
       cannot_view_course: "You don't have permission to access this course"
+      cannot_view_subject: "You don't have permission to access this subject"
 
   supervisors:
     courses:
@@ -139,3 +140,5 @@ en:
     list_of_courses: "List of courses"
     please_login: "Please log in."
     no_course: "You don't have any course"
+    all_courses: "All Courses"
+    no_subject: "No subject available"

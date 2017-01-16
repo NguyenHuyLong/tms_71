@@ -5,13 +5,11 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   resources :users, except: [:destroy]
-  resources :courses, only: :show
-  resources :subjects, only: :show
+  resources :user_courses, only: [:show, :index]
 
   namespace :supervisors do
     resources :courses
     resources :subjects
     resources :users
-    resources :courses, only: [:show, :update]
   end
 end

@@ -1,0 +1,16 @@
+<h1><%= @course.course.name %></h1>
+
+<div class="col-md-6 col-md-offset-3">
+  <ul class="courses">
+    <% if @user_subjects.present? %>
+      <% @user_subjects.each do |user_subject| %>
+        <li>
+          <h3><%= link_to user_subject.subject.name, "#" %></h3><br>
+          <%= user_subject.status %></h3>
+        </li>
+      <% end %>
+    <% else %>
+      <%= t "user.no_subject" %>
+    <% end %>
+  </ul>
+</div>
