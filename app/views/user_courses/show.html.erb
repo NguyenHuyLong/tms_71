@@ -5,7 +5,10 @@
     <% if @user_subjects.present? %>
       <% @user_subjects.each do |user_subject| %>
         <li>
-          <h3><%= link_to user_subject.subject.name, "#" %></h3><br>
+          <h3>
+            <%= link_to user_subject.subject.name,
+              user_course_user_subject_path(@course, user_subject) %>
+          </h3><br>
           <%= user_subject.status %></h3>
         </li>
       <% end %>

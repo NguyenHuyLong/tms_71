@@ -1,0 +1,40 @@
+<div class="col-md-8">
+  <div class="col-md-10">
+    <h1 class="header-title"><%= @user_subject.subject.name %></h1>
+    <%= @user_subject.subject.description %>
+  </div>
+  <div class="col-md-2">
+    <h3><%= link_to t("finish"), "#", class: "btn btn-danger" %></h3>
+  </div>
+  <div class="col-md-12">
+    <ul class="courses">
+      <% if @supports.tasks.any? %>
+        <% @supports.tasks.each do |task| %>
+          <li>
+            <%= form_for @supports.new_user_task do |f| %>
+              <div class="col-md-8">
+                <h3><%= task.name %></h3>
+                <%= task.description %>
+              </div>
+              <% if current_user.tasks.include?(task) %>
+                <div class="col-md-4">
+                  <h3><span class="label label-default"><%= t "done" %>
+                  </span></h3>
+                </div>
+              <% else %>
+                <div class="col-md-4">
+                  <%= f.hidden_field :task_id, value: task.id %>
+                  <%= f.hidden_field :user_subject_id, value: @user_subject.id %>
+                  <h3><%= f.button t("finish"), data: {confirm: t("confirm")},
+                    type: :submit, class: "btn btn-success" %></h3>
+                </div>
+              <% end %>
+            <% end %>
+          </li>
+        <% end %>
+      <% else %>
+        <%= t "user.no_task" %>
+      <% end %>
+    </ul>
+  </div>
+</div>
