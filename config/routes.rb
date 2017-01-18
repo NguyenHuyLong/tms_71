@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :users, except: [:index, :destroy]
   resources :courses, only: :index
   resources :user_courses, only: :show do
-    resources :user_subjects, only: :show
+    resources :user_subjects, only: [:show, :update]
   end
   resources :user_tasks, only: :create
 

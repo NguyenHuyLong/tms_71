@@ -12,6 +12,8 @@ en:
   email: "Email: "
   finish: "Finish"
   done: "Done"
+  new: "New"
+  progress: "Progress"
 
   layouts:
     header:
@@ -64,7 +66,8 @@ en:
     success:
       create_subject: "Create subject successful!"
       create_course: "Create course successful!"
-      finish_task: "You have finished task"
+      finish_task: "You have finished task!"
+      finish_subject: "You have finished subject!"
     delete:
       delete_subject: "Subject deleted"
       delete_user: "Trainee deleted"
