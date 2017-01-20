@@ -5,7 +5,6 @@ class UserTasksController < ApplicationController
   def create
     @user_task = current_user.user_tasks.new user_task_params
     @user_task.status = Settings.finished
-
     if @user_task.save
       flash[:success] = t "flash.success.finish_task"
     else

@@ -1,5 +1,8 @@
 task: 3
+subject_status: 0
 per_page: 15
 pending: "pending"
 started: "started"
 finished: "finished"
+progress: "progress"
+init: "init"

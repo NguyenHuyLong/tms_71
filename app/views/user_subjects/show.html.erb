@@ -1,11 +1,27 @@
 <div class="col-md-8">
   <div class="col-md-10">
-    <h1 class="header-title"><%= @user_subject.subject.name %></h1>
+    <div class="row">
+      <h1 class="header-title"><%= @user_subject.subject.name %></h1>
+      <% case @user_subject.status %>
+      <% when Settings.init %>
+        <h4><span class="label label-success"><%= t "new" %></span></h4>
+      <% when Settings.progress %>
+        <h4><span class="label label-primary"><%= t "progress" %></span></h4>
+      <% when Settings.finished %>
+        <h4><span class="label label-default"><%= t "finish" %></span></h4>
+      <% end %>
+    </div><br>
     <%= @user_subject.subject.description %>
   </div>
-  <div class="col-md-2">
-    <h3><%= link_to t("finish"), "#", class: "btn btn-danger" %></h3>
-  </div>
+  <% if @user_subject.progress? %>
+    <%= form_for [@user_subject.user_course, @user_subject] do |f| %>
+      <div class="col-md-2">
+        <%= f.hidden_field :status, value: :finished %>
+        <h3><%= f.button t("finish"), type: :submit,
+          data: {confirm: t("confirm")}, class: "btn btn-danger" %></h3>
+      </div>
+    <% end %>
+  <% end %>
   <div class="col-md-12">
     <ul class="courses">
       <% if @supports.tasks.any? %>
@@ -22,12 +38,14 @@
                   </span></h3>
                 </div>
               <% else %>
-                <div class="col-md-4">
-                  <%= f.hidden_field :task_id, value: task.id %>
-                  <%= f.hidden_field :user_subject_id, value: @user_subject.id %>
-                  <h3><%= f.button t("finish"), data: {confirm: t("confirm")},
-                    type: :submit, class: "btn btn-success" %></h3>
-                </div>
+                <% if @user_subject.progress? %>
+                  <div class="col-md-4">
+                    <%= f.hidden_field :task_id, value: task.id %>
+                    <%= f.hidden_field :user_subject_id, value: @user_subject.id %>
+                    <h3><%= f.button t("finish"), data: {confirm: t("confirm")},
+                      type: :submit, class: "btn btn-success" %></h3>
+                  </div>
+                <% end %>
               <% end %>
             <% end %>
           </li>

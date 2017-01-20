@@ -7,7 +7,7 @@ class UserCoursesController < ApplicationController
       @user_subjects = @course.user_subjects
     else
       flash[:danger] = t "flash.danger.course_not_found"
-      redirect_to user_courses_path
+      redirect_to courses_path
     end
   end
 end
