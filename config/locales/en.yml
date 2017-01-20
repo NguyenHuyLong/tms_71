@@ -10,6 +10,8 @@ en:
   confirm: "You sure?"
   close: "Add"
   email: "Email: "
+  finish: "Finish"
+  done: "Done"
 
   layouts:
     header:
@@ -62,6 +64,7 @@ en:
     success:
       create_subject: "Create subject successful!"
       create_course: "Create course successful!"
+      finish_task: "You have finished task"
     delete:
       delete_subject: "Subject deleted"
       delete_user: "Trainee deleted"
@@ -72,6 +75,9 @@ en:
       course_not_found: "Course didn't existed"
       cannot_view_course: "You don't have permission to access this course"
       cannot_view_subject: "You don't have permission to access this subject"
+      subject_not_found: "Subject didn't existed"
+      task_not_found: "Task didn't existed"
+      error: "Something error"
 
   supervisors:
     courses:
@@ -149,3 +155,4 @@ en:
     no_course: "You don't have any course"
     all_courses: "All Courses"
     no_subject: "No subject available"
+    no_task: "No task available"
