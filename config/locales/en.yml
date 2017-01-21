@@ -20,6 +20,8 @@ en:
   show_hide: "Show/Hide"
   activities: Activities
   init: "Init"
+  course_note: "Course Note"
+  member: "Member"
 
   layouts:
     header:
@@ -165,3 +167,14 @@ en:
     all_courses: "All Courses"
     no_subject: "No subject available"
     no_task: "No task available"
+    subject:
+      init_subject: "Init Subjects: %{init_subject}/%{total_subject}"
+      progress_subject: "Progress Subjects: %{progress_subject}/%{total_subject}"
+      finished_subject: "Finish Subjects: %{finish_subject}/%{total_subject}"
+    task:
+      init_task: "Init Tasks: %{init_task}/%{total_task}"
+      finished_task: "Finish Tasks: %{finish_task}/%{total_task}"
+
+  time:
+    formats:
+      default: "%d-%m-%Y"

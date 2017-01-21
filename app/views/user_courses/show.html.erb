@@ -1,13 +1,17 @@
-<h1><%= @course.course.name %></h1>
-
-<div class="col-md-6 col-md-offset-3">
+<h1 class="header-title">
+  <%= @user_course.course.name %>
+  <% if @user_course.course.started? %>
+    <h4><span class="label label-success"><%= t "progress" %></span></h4>
+  <% end %>
+</h1>
+<div class="col-md-8">
   <ul class="courses">
     <% if @user_subjects.present? %>
       <% @user_subjects.each do |user_subject| %>
         <li>
           <h3>
             <%= link_to user_subject.subject.name,
-              user_course_user_subject_path(@course, user_subject) %>
+              user_course_user_subject_path(@user_course, user_subject) %>
           </h3><br>
           <%= user_subject.status %></h3>
         </li>
@@ -16,4 +20,51 @@
       <%= t "user.no_subject" %>
     <% end %>
   </ul>
+</div>
+<div class="col-md-4">
+  <div class="panel panel-primary">
+    <div class="panel-heading"><%= t "course_note" %></div>
+    <div class="panel-body">
+      <%= t "start_date" %><%= l @user_course.course.start_date,
+        format: :default %><br>
+      <%= t "end_date" %><%= l @user_course.course.end_date,
+        format: :default %>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading"><%= t "member" %>
+      <span class="badge"><%=@user_course.course.user_courses.count%></span>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <% @user_course.course.user_courses.each do |user_course| %>
+          <li>
+            <%= link_to user_course.user.name, user_course.user %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading"><%= t "progress" %></div>
+    <div class="panel-body">
+      <ul>
+        <li>
+          <%= t "user.subject.init_subject",
+            init_subject: @user_subjects.init.count,
+            total_subject: @user_subjects.count %>
+        </li>
+        <li>
+          <%= t "user.subject.progress_subject",
+            progress_subject: @user_subjects.progress.count,
+            total_subject: @user_subjects.count %>
+        </li>
+        <li>
+          <%= t "user.subject.finished_subject",
+            finish_subject: @user_subjects.finished.count,
+            total_subject: @user_subjects.count %>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
