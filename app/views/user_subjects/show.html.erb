@@ -56,3 +56,22 @@
     </ul>
   </div>
 </div>
+<div class="col-md-4">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Progress</div>
+    <div class="panel-body">
+      <ul>
+        <li>
+          <%= t "user.task.init_task",
+            init_task: @user_subject.subject.tasks.count - @user_subject.user_tasks.count,
+            total_task: @user_subject.subject.tasks.count %>
+        </li>
+        <li>
+          <%= t "user.task.finished_task",
+            finish_task: @user_subject.user_tasks.count,
+            total_task: @user_subject.subject.tasks.count %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
