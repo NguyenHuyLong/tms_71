@@ -14,6 +14,12 @@ en:
   done: "Done"
   new: "New"
   progress: "Progress"
+  course: "Course: "
+  start_date: "Start date: "
+  end_date: "End date: "
+  show_hide: "Show/Hide"
+  activities: Activities
+  init: "Init"
 
   layouts:
     header:
@@ -151,7 +157,7 @@ en:
     end_date: "End date"
     avatar: "Avatar"
     signup: "Sign up"
-    my_profile: "Your profile"
+    my_profile: "Profile"
     edit_profile: "Edit Profile Detail"
     list_of_courses: "List of courses"
     please_login: "Please log in."
