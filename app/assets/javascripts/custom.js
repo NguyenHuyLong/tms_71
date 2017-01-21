@@ -9,3 +9,9 @@ function remove_fields(link) {
   $(link).prev("input[type=hidden]").val("1");
   $(link).closest(".tasks").fadeOut();
 }
+
+$(document).ready(function(){
+  $("button").click(function(){
+    $(".test").toggle();
+  });
+});

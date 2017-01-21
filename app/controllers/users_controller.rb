@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update]
 
   def show
-    @courses = current_user.courses
+    @user_courses = UserCourse.where user_id: params[:id]
   end
 
   def new

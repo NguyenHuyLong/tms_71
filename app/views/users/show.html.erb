@@ -1,9 +1,70 @@
 <% provide :title, t("user.my_profile") %>
 
 <h1><%= t "user.my_profile" %></h1>
+
 <div class="col-md-6 col-md-offset-3">
   <div class="center">
-    <h3><%= @user.name %></h3></br>
-    <b><%= t "email" %></b><%= @user.email %></br>
+    <div class="profile">
+      <h3><%= @user.name %></h3></br>
+      <b><%= t "email" %></b><%= @user.email %></br>
+    </div>
+  </div>
+</div>
+<div class="col-md-12">
+  <div class="col-md-6">
+    <% @user_courses.each do |user_course| %>
+      <% if user_course.course.started? %>
+        <div class="col-md-6">
+          <h4><%= t "course" %>
+            <span class="course-name"><%= user_course.course.name %></span>
+          </h4>
+          <h4><span class="label label-success">
+            <%= user_course.course.status.capitalize %>
+          </span></h4>
+        </div>
+        <div class="col-md-6">
+          <p><%= t "start_date" %><span class="label label-info">
+            <%= user_course.course.start_date.to_date %></span></p>
+          <p><%= t "end_date" %><span class="label label-info">
+            <%= user_course.course.end_date.to_date %></span></p>
+        </div>
+        <div class="col-md-12">
+          <button class="btn btn-primary"><%= t "show_hide" %></button>
+          <div class="test">
+            <% user_subjects = user_course.user_subjects %>
+            <ul class="subjects">
+              <% user_subjects.each do |user_subject| %>
+                <li class="subjects">
+                  <b><%= user_subject.subject.name %></b> |
+                    <span class="label label-warning">
+                      <%= user_subject.status.capitalize %>
+                    </span>
+                  <% tasks = user_subject.subject.tasks %>
+                  <% tasks.each do |task| %>
+                    <div class="padding-left">
+                      <%= task.name %> |
+                      <% if current_user.tasks.include?(task) %>
+                        <span class="label label-default">
+                          <%= t "done" %>
+                        </span>
+                      <% else %>
+                        <span class="label label-success">
+                          <%= t "init" %>
+                        </span>
+                      <% end %>
+                    </div>
+                  <% end %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><%= t "activities" %></div>
+    </div>
   </div>
 </div>
