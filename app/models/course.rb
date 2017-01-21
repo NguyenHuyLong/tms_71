@@ -4,7 +4,7 @@ class Course < ApplicationRecord
   has_many :user_courses, inverse_of: :course
   has_many :users, through: :user_courses
 
-  enum status: {pending: 0, started: 1, finished: 2}
+  enum status: {init: 0, started: 1, finished: 2}
 
   validates :name, presence: true
   validates :description, presence: true, length: {maximum: 140}
